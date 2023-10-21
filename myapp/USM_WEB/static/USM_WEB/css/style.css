@@ -1,12 +1,6 @@
 h1{
-    color: green;
+    color: rgb(171, 25, 171);
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-.logousm{
-    width: 100px;
-    height: 100px;
-    margin-left: 10px;
-    margin-top: 10px;
-}
-```
+
