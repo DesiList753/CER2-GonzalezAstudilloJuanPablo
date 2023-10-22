@@ -5,11 +5,11 @@ from .models import Comunicado, Entidad
 
 
 def base(request):
-    entidad = Entidad.objects.all()
+    
     return render(request, 'usmweb/base.html')
 
 
 def filtro(request):
-    Comunicados = Comunicado.objects.all()
+
 
     return render(request, 'usmweb/filtro.html')

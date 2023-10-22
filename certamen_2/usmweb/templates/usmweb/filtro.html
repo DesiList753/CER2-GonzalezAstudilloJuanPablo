@@ -1,11 +1,11 @@
-{% extends 'USM_WEB/base.html' %}
+{% extends 'usmweb/base.html' %}
 
 {% block content %}
 {% for comunicado in comunicados %}
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h5 class="card-title">{{ comunicado.titulo }}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">{% comunicado.entidad.titulo $}</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.titulo }}</h6>
     <p class="card-text">{{ comunicado.detalle_corto }}</p>
   </div>
 </div>
