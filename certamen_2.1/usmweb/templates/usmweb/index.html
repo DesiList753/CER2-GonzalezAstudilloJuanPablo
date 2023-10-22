@@ -1,6 +1,10 @@
-{% extends 'usmweb/base.html' %}
-
-{% block content %}
+{%load static%}
+<header class="row align-items-center">
+  <a href="https://usm.cl/" class="col-md-3 col-xl-3"><img class="Logo_USM" src="{% static 'usmweb/img/Direccion_Sede_Vina_del_Mar_chica.png' %}" alt="Logo de Universidad Tecnica Federico Santa Maria"></a>
+    <h1>Sistemas Integrado de Notificaciones</h1>
+  <div class="borde col-md">
+  </div>
+</header>
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
@@ -21,4 +25,3 @@
 </div>
 {% endfor %}
 
-{% endblock %}
