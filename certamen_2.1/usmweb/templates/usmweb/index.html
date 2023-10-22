@@ -1,0 +1,24 @@
+{% extends 'usmweb/base.html' %}
+
+{% block content %}
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu">
+    {% for nombre in entidad %}
+    <li><a class="dropdown-item" href="#">{{ nombre }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% for comunicado in comunicados %}
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ comunicado.titulo }}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.titulo }}</h6>
+    <p class="card-text">{{ comunicado.detalle_corto }}</p>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

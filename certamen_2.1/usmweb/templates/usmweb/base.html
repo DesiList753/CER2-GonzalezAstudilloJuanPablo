@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USM S.I.N</title>
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'usmweb/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'usmweb/css/style.css' %}" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+</head>
+<body>
+  <div class="container-fluid">
+    <header class="row align-items-center">
+      <a href="https://usm.cl/" class="col-md-3 col-xl-3"><img class="Logo_USM" src="{% static 'usmweb\img\Direccion_Sede_Vina_del_Mar_chica.png' %}" alt="Logo de Universidad Tecnica Federico Santa Maria"></a>
+        <h1>Sistemas Integrado de Notificaciones</h1>
+      <div class="borde col-md">
+      </div>
+    </header>
+    {% include 'usmweb/index.html' %}
+    <section class="col">
+      {% block content %}
+
+      {% endblock %}
+    </section>
+  </div>
+</body>
+</html>
