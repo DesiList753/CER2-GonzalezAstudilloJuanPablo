@@ -4,17 +4,17 @@
     box-sizing: border-box;
 }
 h1{
-    color: rgb(23, 23, 23);
+    color: rgb(0, 0, 0);
     font-size: 40px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align: center;
 }
 .borde{    
-    border-bottom: 5px solid rgb(85, 85, 85);
+    border-bottom: 5px solid rgb(50, 50, 50);
     border-radius: 10px;
 }
 .Logo_USM{
-    width: 50%;
+    width: 200px;
     margin-top: 30px;
     margin-left: 10%;
     align-items: center;
@@ -27,4 +27,15 @@ header{
     top: 0;
     left: 0;
     z-index: 1000;
+}
+
+
+footer{
+    text-size-adjust: 5%;
+}
+
+#boton{
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: #303030;
 }
