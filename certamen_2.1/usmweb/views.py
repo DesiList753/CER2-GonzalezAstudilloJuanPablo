@@ -5,7 +5,7 @@ from .models import Comunicado, Entidad
 
 
 def index(request):
-    comunicados = Comunicado.objects.order_by('fecha_publicacion')
+    comunicados = Comunicado.objects.order_by('-fecha_publicacion')
     entidades = Entidad.objects.order_by('nombre_entidad')
     select_entidad = request.GET.get('s_entidad')
     if select_entidad:
