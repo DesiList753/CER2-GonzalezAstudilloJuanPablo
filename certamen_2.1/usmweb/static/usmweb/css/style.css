@@ -27,7 +27,7 @@ h5:hover{
     margin: auto;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1400px) {
     .mostrarg{
         display: none;
     }
