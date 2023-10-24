@@ -42,12 +42,21 @@
 <div class="container-fluid">
   <div class="row">
     {% for comunicado in comunicados %}
-    <div class="col-md-4">
+    <div class="col-md-4 mostrarc">
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">{{ comunicado.titulo }}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.nombre_entidad }}</h6>
           <p class="card-text">{{ comunicado.detalle_corto }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 mostrarg">
+      <div class="card col-12">
+        <div class="card-body col-12">
+          <h5 class="card-title">{{ comunicado.titulo }}</h5><img class="logo" src="{{ comunicado.entidad.logo }}" alt="logo de entidad">
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.nombre_entidad }}</h6>
+          <p class="card-text col-10">{{ comunicado.detalle }}</p> 
         </div>
       </div>
     </div>

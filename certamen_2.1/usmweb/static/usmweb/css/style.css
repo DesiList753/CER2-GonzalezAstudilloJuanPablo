@@ -15,4 +15,23 @@ h1{
 h5:hover{
     color: royalblue;
 }
- 
+.mostrarg{
+    display: block;
+}
+.mostrarc{
+    display: none;
+}
+.logo{
+    float: right;
+    width: 100px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1140px) {
+    .mostrarg{
+        display: none;
+    }
+    .mostrarc{
+        display: block;
+    }
+}
