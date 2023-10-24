@@ -4,47 +4,60 @@
 <link rel="stylesheet" href="{% static 'usmweb/css/style.css' %}" >
 
 <div class="container-fluid">
-  <header class="navbar navbar-expand-lg bg-body-tertiary">
-    <a href="https://usm.cl/" class="col-md-3 col-xl-3"><img class="Logo_USM" src="{% static 'usmweb/img/Direccion_Sede_Vina_del_Mar_chica.png' %}" alt="Logo de Universidad Tecnica Federico Santa Maria"></a>
-      <div class="col-md-6 col-xl-6">
-        <h1 class="Titulo">Sistemas Integrado de Notificaciones</h1>
-      </div>
-  </header>
+  <div id="cabesal" class="row">
+    <div class="col-sm col-xl-3">
+      <a href="https://usm.cl/"><img class="Logo_USM" src="{% static 'usmweb/img/Direccion_Sede_Vina_del_Mar_chica.png' %}" alt="Logo de Universidad Tecnica Federico Santa Maria"></a>
+    </div>
+    <div class="d-none d-sm-block col-sm-6 col-xl-9">
+      <h1>Sistemas Integrado de Notificaciones</h1><br><hr>
+    </div>
+  </div>
   <div id="navegador">
-    <nav class="row">
-      <div class="navbar" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-lg">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="admin">administracion</a>
-          </li>
-        </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin">administracion</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
-  </div>  
-  <select class="form-select form-select-sm" aria-label="Small select example">
-    <option {% if not entidad_seleccionada %}selected{% endif %}>Seleccione Entidad</option>
-    {% for entidad in entidades %}
-    <option value="s_entidad = {{ entidad.nombre_entidad }}">{{ entidad.nombre_entidad }}</option>
-    {% endfor %}
-    <button type="submit">fitrar</button>
-  </select> 
+  </div>
+  
+  <div id="form" class="row ">
+    <form method="get" action="{% url 'index' %}">
+      <div class="form-group col-4">
+        <select class="form-control" id="s_entidad" name="s_entidad">
+          <option value="">Todas las entidades</option>
+          {% for entidad in entidades %}
+          <option value="{{ entidad.id_entidad }}">{{ entidad.nombre_entidad }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Filtrar</button>
+    </form>
+  </div> 
 </div>
-<div class="container">
+
+<div class="container-fluid">
   <div class="row">
     {% for comunicado in comunicados %}
     <div class="col-md-4">
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">{{ comunicado.titulo }}</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.titulo }}</h6>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ comunicado.entidad.nombre_entidad }}</h6>
           <p class="card-text">{{ comunicado.detalle_corto }}</p>
         </div>
       </div>
     </div>
     {% endfor %}
+
   </div>
 </div>
 {% endblock %}
